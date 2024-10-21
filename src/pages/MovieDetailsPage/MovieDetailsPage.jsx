@@ -10,7 +10,7 @@ import { getImageUrl, getMovieDetails } from "../../services/Api";
 import Loader from "../../components/Loader/Loader";
 import s from "./MovieDetails.module.css";
 
-const MovieDetails = () => {
+const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const location = useLocation();
   const goBackRef = useRef(location.state);
@@ -61,4 +61,4 @@ const MovieDetails = () => {
   );
 };
 
-export default MovieDetails;
+export default MovieDetailsPage;

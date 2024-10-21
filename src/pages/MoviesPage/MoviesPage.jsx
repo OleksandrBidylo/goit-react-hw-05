@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { searchMovies } from "../../services/Api";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import s from "./MoviesPage.module.css";
 import Loader from "../../components/Loader/Loader";
+import MovieList from "../../components/MovieList/MovieList";
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -53,17 +54,7 @@ const MoviesPage = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <ul>
-          {filtredData.map((movie) => (
-            <li key={movie.id}>
-              <p>
-                <Link to={movie.id.toString()} state={location}>
-                  {movie.title}
-                </Link>
-              </p>
-            </li>
-          ))}
-        </ul>
+        <MovieList movies={filtredData} location={location} />
       )}
     </div>
   );

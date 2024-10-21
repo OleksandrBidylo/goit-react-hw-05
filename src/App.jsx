@@ -5,11 +5,15 @@ import Header from "./components/Header/Header";
 
 import { lazy, Suspense } from "react";
 
-const Cast = lazy(() => import("./components/Cast/Cast"));
+const MovieCast = lazy(() => import("./components/MovieCast/MovieCast"));
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage"));
-const MovieDetails = lazy(() => import("./pages/MovieDetails/MovieDetails"));
-const Reviews = lazy(() => import("./components/Reviews/Reviews"));
+const MovieDetailsPage = lazy(() =>
+  import("./pages/MovieDetailsPage/MovieDetailsPage")
+);
+const MovieReviews = lazy(() =>
+  import("./components/MovieReviews/MovieReviews")
+);
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 
 function App() {
@@ -20,9 +24,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/movies" element={<MoviesPage />} />
-          <Route path="/movies/:movieId" element={<MovieDetails />}>
-            <Route path="reviews" element={<Reviews />} />
-            <Route path="cast" element={<Cast />} />
+          <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
+            <Route path="reviews" element={<MovieReviews />} />
+            <Route path="cast" element={<MovieCast />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />{" "}
         </Routes>
