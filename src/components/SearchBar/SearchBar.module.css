@@ -1,0 +1,26 @@
+.searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
+
+  && button {
+    border: none;
+    background-color: transparent;
+    color: orange;
+    position: absolute;
+    top: 20%;
+    right: 45%;
+  }
+}
+
+.Field {
+  background-color: rgb(53, 52, 52);
+  border: none;
+  color: orange;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  padding: 10px;
+}

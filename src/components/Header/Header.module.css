@@ -1,0 +1,16 @@
+.header {
+  background-color: rgb(53, 52, 52);
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.link {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.activeLink {
+  color: orange;
+}

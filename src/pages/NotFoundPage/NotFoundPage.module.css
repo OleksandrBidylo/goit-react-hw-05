@@ -1,0 +1,8 @@
+.wrapper {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding-top: 300px;
+  font-weight: bold;
+  font-size: 48px;
+}
